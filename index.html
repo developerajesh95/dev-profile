@@ -1,173 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rajesh Kumar – Android Application Developer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7fb;
-      color: #333;
-    }
-    header {
-      height: 25vh;
-      background: linear-gradient(to right, #637a91, #2bafd4);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    header h1 {
-      font-size: 1.8rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 0.9rem;
-      margin-top: 0.3rem;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.7);
-      padding: 0.6rem;
-      text-align: center;
-      z-index: 1000;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #0073e6;
-      margin-bottom: 1rem;
-    }
-    .intro {
-      text-align: center;
-    }
-    .intro img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: #f9f9f9;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-      text-align: justify;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #222;
-      color: white;
-      margin-top: 3rem;
-    }
-    .social a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .highlight {
-      font-weight: bold;
-      color: #0073e6;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajesh Kumar - Android Application Developer</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons from CDN for a professional look -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Font for a clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom CSS to handle icon rendering after Lucide script runs */
+        .lucide-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Override default nav link styles for better hover effect */
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover {
+            border-color: #f8fafc;
+        }
+        /* New custom class for hover animation on cards */
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<body class="bg-slate-900 text-slate-200">
 
-  <header>
-    <h1>Rajesh Kumar</h1>
-    <p>Android Application Developer</p>
-  </header>
+    <!-- Sticky Navigation Bar -->
+    <nav class="fixed top-0 z-50 w-full bg-slate-950/80 backdrop-blur-md shadow-lg">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <span class="text-xl font-bold text-white">Rajesh Kumar</span>
+                <div class="flex space-x-4">
+                    <a href="#about" class="nav-link text-white font-medium px-3 py-2 rounded-md">About</a>
+                    <a href="#experience" class="nav-link text-white font-medium px-3 py-2 rounded-md">Experience</a>
+                    <a href="#skills" class="nav-link text-white font-medium px-3 py-2 rounded-md">Skills</a>
+                    <a href="#projects" class="nav-link text-white font-medium px-3 py-2 rounded-md">Projects</a>
+                    <a href="#contact" class="nav-link text-white font-medium px-3 py-2 rounded-md">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <section id="about">
-    <div class="intro">
-      <img src="images/linked_in.jpeg" alt="Rajesh Kumar">
-      <h2>About Me</h2>
-      <p>Hi, I’m Rajesh – an Android Application Developer passionate about creating innovative mobile and automotive applications. With experience across top companies like Adidas, Infosys, and Articly, I bring expertise in building user-friendly, high-performance apps.</p>
-    </div>
-  </section>
+    <!-- Main Header Section -->
+    <header class="h-screen relative flex items-center justify-center text-center text-white bg-no-repeat bg-center" style="background-image: url('https://www.slashgear.com/img/uploads/embed/it-FeXZG2-1687827537.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-slate-950/70"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
+                Rajesh Kumar
+            </h1>
+            <p class="text-lg sm:text-xl font-medium">Android Application Developer</p>
+        </div>
+    </header>
 
-  <section id="skills">
-    <h2>Skills & Expertise</h2>
-    <ul>
-      <li>Programming: Java, Kotlin, Python, HTML</li>
-      <li>Android Development: Android SDK, Jetpack, Automotive Apps</li>
-      <li>Frameworks: Dagger, Hilt, Work Manager, REST API</li>
-      <li>Tools: Git, JIRA, Jenkins, Firebase (Crashlytics & Analytics)</li>
-      <li>Release Management: Managing and deploying application releases</li>
-      <li>Soft Skills: Problem-Solving, Mentoring, Team Collaboration</li>
-    </ul>
-  </section>
+    <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <!-- About Section -->
+        <section id="about" class="bg-slate-800 rounded-3xl shadow-xl p-8 sm:p-12 md:p-16 -mt-20 relative z-10">
+            <div class="text-center">
+                <img src="https://placehold.co/120x120/E2E8F0/1A202C?text=RK" alt="Rajesh Kumar" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-slate-700 shadow-lg">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-200 mb-4">About Me</h2>
+                <p class="text-base sm:text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                    Hi, I’m Rajesh – an Android Application Developer passionate about creating innovative mobile and automotive applications. With experience across top companies like <span class="font-semibold text-slate-200">Adidas, Infosys, and Articly</span>, I bring expertise in building user-friendly, high-performance apps.
+                </p>
+            </div>
+        </section>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Articly</h3>
-        <p>Transformed the main Android application through strategic code refactoring, dramatically improving stability and performance. This work was a foundational step, paving the way for the successful development and launch of our brand-new automotive application, a key addition to our product ecosystem.</p>
-      </div>
-      <div class="project-card">
-        <h3>Adidas</h3>
-        <p>Contributed to the main adidas application for the Chinese market by developing a new feature that improved user engagement and functionality. Also, contributed to the development of a standalone performance tracking application, building the software infrastructure to sync with athletic devices and provide users with detailed performance analytics.</p>
-      </div>
-      <div class="project-card">
-        <h3>KBC Bank (Infosys)</h3>
-        <p>Engineered a critical FX Transfer feature for a banking platform, ensuring its security and reliability. I also integrated a new analytics library to enable comprehensive data collection on the feature's usage and performance.</p>
-      </div>
-    </div>
-  </section>
+        <!-- Experience Section -->
+        <section id="experience" class="py-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-200 mb-8">Professional Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Mobile Application Developer (Android)</h3>
+                    <p class="text-sm font-semibold text-sky-400 mb-2">Articly, Munich, Germany | 07/2023 - Present</p>
+                    <ul class="list-disc list-inside text-sm text-gray-400 leading-relaxed space-y-1">
+                        <li>Developing and maintaining the main Articly application.</li>
+                        <li>Refactoring the codebase using MVVM architecture.</li>
+                        <li>Contributing to the automotive app (live on the Harman Store).</li>
+                        <li>Assisting in pipeline automation using Python.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Software Developer (Android)</h3>
+                    <p class="text-sm font-semibold text-sky-400 mb-2">adidas, Gurgaon, India | 05/2022 - 12/2022</p>
+                    <ul class="list-disc list-inside text-sm text-gray-400 leading-relaxed space-y-1">
+                        <li>Collaborated with the China team to implement rating and sharing features using the LATTE framework.</li>
+                        <li>Worked with R&D teams on player performance tracking applications.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Senior Systems Engineer (Android)</h3>
+                    <p class="text-sm font-semibold text-sky-400 mb-2">Infosys, Chandigarh, India | 11/2020 - 05/2022</p>
+                    <ul class="list-disc list-inside text-sm text-gray-400 leading-relaxed space-y-1">
+                        <li>Integrated geolocation & push notifications for banking applications.</li>
+                        <li>Developed FX Transfer feature for KBC Bank, Belgium.</li>
+                        <li>Maintained code quality and reliability using version control.</li>
+                        <li>Improved app analytics for data-driven decision-making.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Software Engineer (Android)</h3>
+                    <p class="text-sm font-semibold text-sky-400 mb-2">Magictel Solutions Pvt. Ltd, Noida, India | 03/2019 - 10/2020</p>
+                    <ul class="list-disc list-inside text-sm text-gray-400 leading-relaxed space-y-1">
+                        <li>Integrated analytics tools for user behavior tracking.</li>
+                        <li>Maintained code quality and reliability using version control.</li>
+                        <li>Built advertisement placeholders to enhance monetization strategies.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Software Engineer (Android)</h3>
+                    <p class="text-sm font-semibold text-sky-400 mb-2">Bailiwick Tech Innovations Pvt. Ltd, Noida, India | 07/2017 - 03/2019</p>
+                    <ul class="list-disc list-inside text-sm text-gray-400 leading-relaxed space-y-1">
+                        <li>Designed a custom UI/UX that boosted user engagement by 10%.</li>
+                        <li>Optimized app performance, reducing size by 20%.</li>
+                        <li>Leveraged open-source libraries to speed up development by 25%.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <p style="text-align:center;">I’d love to connect and discuss new opportunities.</p>
-    <p style="text-align:center;">
-      📧 <a href="mailto:developerajesh95@gmail.com">developerajesh95@gmail.com</a><br>
-      📱 <span class="highlight">+91-9650431405 (Available on WhatsApp)</span>
-    </p>
-  </section>
+        <!-- Skills Section -->
+        <section id="skills" class="py-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-200 mb-8">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-lg font-semibold text-slate-200 mb-2">Programming</h3>
+                    <p class="text-sm text-gray-400">Java, Kotlin, Python, HTML</p>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-lg font-semibold text-slate-200 mb-2">Android Development</h3>
+                    <p class="text-sm text-gray-400">Android SDK, Jetpack, Automotive Apps</p>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-lg font-semibold text-slate-200 mb-2">Frameworks</h3>
+                    <p class="text-sm text-gray-400">Dagger, Hilt, Work Manager, REST API</p>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-lg font-semibold text-slate-200 mb-2">Tools</h3>
+                    <p class="text-sm text-gray-400">Git, JIRA, Jenkins, Firebase (Crashlytics & Analytics)</p>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-lg font-semibold text-slate-200 mb-2">Release Management</h3>
+                    <p class="text-sm text-gray-400">Managing and deploying application releases</p>
+                </div>
+                <div class="bg-slate-800 rounded-lg p-6 shadow-md card-hover-effect">
+                    <h3 class="text-lg font-semibold text-slate-200 mb-2">Soft Skills</h3>
+                    <p class="text-sm text-gray-400">Problem-Solving, Mentoring, Team Collaboration</p>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>© 2025 Rajesh Kumar</p>
-    <div class="social">
-      <a href="https://www.linkedin.com/in/rajesh-kumar-9433a3109/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/developerajesh95" target="_blank">GitHub</a>
-    </div>
-  </footer>
+        <!-- Projects Section -->
+        <section id="projects" class="py-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-200 mb-8">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-800 rounded-xl p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Articly</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                        I refactored and maintained the main Android application, dramatically improving stability and performance. I also developed our brand-new automotive application from the ground up, a key addition to our product ecosystem.
+                    </p>
+                </div>
+                <div class="bg-slate-800 rounded-xl p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">Adidas</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                        Contributed to the main adidas app for the Chinese market by developing a new feature that improved user engagement and functionality. In parallel, I was a primary developer on a new, standalone performance tracking application.
+                    </p>
+                </div>
+                <div class="bg-slate-800 rounded-xl p-6 shadow-md card-hover-effect">
+                    <h3 class="text-xl font-bold text-slate-200 mb-2">KBC Bank (Infosys)</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed text-justify">
+                        Contributed to a banking application by developing a secure and reliable FX Transfer feature. I also integrated a new analytics library to enhance feature performance tracking and provided valuable insights for future improvements.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="bg-slate-800 rounded-3xl shadow-xl p-8 sm:p-12 md:p-16 my-16">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-slate-200 mb-6">Get in Touch</h2>
+            <p class="text-base sm:text-lg text-gray-400 text-center mb-8">
+                I’d love to connect and discuss new opportunities.
+            </p>
+            <div class="flex flex-col items-center space-y-6">
+                <a href="mailto:developerajesh95@gmail.com" class="flex items-center space-x-3 text-slate-200 hover:text-sky-400 transition-colors">
+                    <i data-lucide="mail" class="lucide-icon"></i>
+                    <span class="font-medium">developerajesh95@gmail.com</span>
+                </a>
+                <a href="tel:+919650431405" class="flex items-center space-x-3 text-slate-200 hover:text-sky-400 transition-colors">
+                    <i data-lucide="phone" class="lucide-icon"></i>
+                    <span class="font-medium">+91-9650431405</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-950 text-gray-400 py-8 text-center">
+        <p class="text-sm mb-2">&copy; 2025 Rajesh Kumar</p>
+        <div class="flex justify-center space-x-6">
+            <a href="https://www.linkedin.com/in/rajesh-kumar-9433a3109/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="linkedin" class="lucide-icon"></i>
+            </a>
+            <a href="https://github.com/developerajesh95" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="text-gray-400 hover:text-white transition-colors">
+                <i data-lucide="github" class="lucide-icon"></i>
+            </a>
+        </div>
+    </footer>
+    <!-- Script to render icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
 </body>
 </html>
